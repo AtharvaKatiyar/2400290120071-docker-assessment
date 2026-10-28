@@ -17,7 +17,7 @@ event TEXT NOT NULL,
 created TIMESTAMPTZ NOT NULL DEFAULT now())"""
 _table_lock = threading.Lock()
 _table_ready = False
-def connect():
+def connect(): 
     return psycopg2.connect(
         host=os.getenv("DB_HOST", "localhost"),
         dbname=os.getenv("DB_NAME", "festpass"),
