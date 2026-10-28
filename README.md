@@ -143,6 +143,17 @@ This indicates that the scan passed the specified CRITICAL vulnerability gate wi
 - `reports/trivy-after.txt` — Trivy report for `fest-backend:0.2`.
 - `screenshots/` — Assessment screenshots, using the required evidence filenames.
 
+## Docker Hub Release
+
+- **Docker Hub repository:** https://hub.docker.com/r/atharvkatiyar/fest-backend
+- **Release version:** `1.0.0`
+- **Published tags:**
+  - `atharvkatiyar/fest-backend:1.0.0`
+  - `atharvkatiyar/fest-backend:1.0`
+- **Image digest:** `sha256:15358b6b63a01b174ceb0efc56d2563dc4f7391b7867c52970f72fcafee73104`
+
+Both tags were pushed successfully and returned the same digest.
+
 ## AI Tools Used
 
 - **ChatGPT (OpenAI):** Used for assistance understanding the assessment, Docker configuration, image hardening, vulnerability scanning, and documentation.
@@ -155,7 +166,7 @@ This indicates that the scan passed the specified CRITICAL vulnerability gate wi
 - [x] Original image vulnerability scan saved.
 - [x] Hardened image built and verified to run as a non-root user.
 - [x] Hardened image CRITICAL vulnerability gate passed.
-- [ ] Actual before-and-after CRITICAL and HIGH counts entered in the comparison table.
+- [x] Actual before-and-after CRITICAL and HIGH counts entered in the comparison table.
 - [ ] Remaining assessment stages, including image publication and Cosign signing, completed and documented.
 
 ## Notes
