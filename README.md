@@ -154,6 +154,32 @@ This indicates that the scan passed the specified CRITICAL vulnerability gate wi
 
 Both tags were pushed successfully and returned the same digest.
 
+## Cosign Image Signing and Verification
+
+### Signed release — `1.0.0`
+
+The Docker image `atharvkatiyar/fest-backend:1.0.0` was signed using Cosign with a password-protected private key. The signature was created and verified against the image digest.
+
+- **Image digest:** `sha256:15358b6b63a01b174ceb0efc56d2563dc4f7391b7867c52970f72fcafee73104`
+- **Verification key:** `cosign.pub`
+- **Result:** Signature verification succeeded.
+
+### Unsigned release — `1.0.1`
+
+The image `atharvkatiyar/fest-backend:1.0.1` was built and pushed without signing it.
+
+The following verification command was executed:
+
+```bash
+cosign verify --key cosign.pub atharvkatiyar/fest-backend:1.0.1
+```
+
+- **Observed result:** `Error: no signatures found`
+- **Exit code:** `10`
+- **Expected outcome:** Verification failed because the image was unsigned.
+
+The private signing key (`cosign.key`) is excluded from version control. Only the public verification key (`cosign.pub`) is intended to be committed.
+
 ## AI Tools Used
 
 - **ChatGPT (OpenAI):** Used for assistance understanding the assessment, Docker configuration, image hardening, vulnerability scanning, and documentation.
@@ -167,7 +193,7 @@ Both tags were pushed successfully and returned the same digest.
 - [x] Hardened image built and verified to run as a non-root user.
 - [x] Hardened image CRITICAL vulnerability gate passed.
 - [x] Actual before-and-after CRITICAL and HIGH counts entered in the comparison table.
-- [ ] Remaining assessment stages, including image publication and Cosign signing, completed and documented.
+- [x] Remaining assessment stages, including image publication and Cosign signing, completed and documented.
 
 ## Notes
 
